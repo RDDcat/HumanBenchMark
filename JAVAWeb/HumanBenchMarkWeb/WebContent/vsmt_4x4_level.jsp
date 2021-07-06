@@ -6,6 +6,10 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
+<%
+String  life = request.getParameter("life");
+%>
+
 <body onload="Play()">
 <form name="form1" action="vsmt_result.jsp" method="post">
   <input type="hidden" id="life" name="life" value="">
