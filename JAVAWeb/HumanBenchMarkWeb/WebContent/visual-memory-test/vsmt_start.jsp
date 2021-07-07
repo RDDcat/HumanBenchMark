@@ -67,15 +67,15 @@ function MakeRandomSquence () {
     let Array = [];
     let num = 0;
     while (num < score) {
-        let n = Math.floor(Math.random() * 4) + 1;
+        let n = Math.floor(Math.random() * 9) + 1;
         if (! sameNum(n)) {
             Array.push(n);
             num++;
-            }
         }
+    }
     function sameNum (n) {
         return Array.find((e) => (e === n));
-        }
+    }
     return Array;
 }
 
