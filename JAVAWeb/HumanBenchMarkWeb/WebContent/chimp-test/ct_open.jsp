@@ -1,15 +1,10 @@
-<%-- 
-  - yukmaro@gmail.com (maroIsRight)
-  - Description: 'Sequence Memory  Test' start page
-  --%>
-
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Chimp-Test</title>
 <style type="text/css">
 .squares{
 	display: grid;
@@ -49,10 +44,15 @@ System.out.println(lifes);
   <input type="hidden" name="level" value=""> 
   <input type="hidden" name="lifes" value=""> 
 </form>
+<form name="form2" action="ct_finalresult.jsp" method="post">
+  <input type="hidden" name="score" value=""> 
+</form>
 
 
 <div>Level:</div>
-<div id='level'>1</div>
+<div id='level'></div>
+<div>Lifes:</div>
+<div id='lifes'></div>
 <div class="squares">
 <div class="square-row">
 <div id="box1"class="square"onclick="IsCorrect(1)"></div>
@@ -150,7 +150,10 @@ var lifes = 3;			//넘어감
 var score = level+3;
 var ClickCount = 0;
 var count = 0;
-var Num;
+
+//현재상태표시
+document.getElementById("level").innerHTML=level;
+document.getElementById("lifes").innerHTML=lifes;
 
 function Set(){
 	var answerHold = MakeRandomSquence();
@@ -158,17 +161,17 @@ function Set(){
 	answers = arrHold.split(",");
 }
 
-function MakeRandomSquence () {				//랜덤번호 추출기
+function MakeRandomSquence () {													//랜덤번호 추출기
 	let Array = [];
 	let num = 0;
 	while (num < score) {
-		let n = Math.floor(Math.random() * 40) + 1;		//범위설정 1~40
+		let n = Math.floor(Math.random() * 40) + 1;								//범위설정 1~40range
 		if (! sameNum(n)) {
 			Array.push(n);
 			num++;
 		}
 	}
-	function sameNum (n) {				//중복제거
+	function sameNum (n) {														//중복제거
 		return Array.find((e) => (e === n));
 	}
 	return Array;
@@ -351,10 +354,16 @@ function ShowAns(){
 }
 
 function IsCorrect(number){
-    alert(typeof(number)+number);
-    alert(typeof(answers[ClickCount]));
+	var box = document.getElementById("box"+number);							//클릭시 박스 색깔변환
+	box.style.backgroundColor = "lightgreen";
+	box.innerHTML = null;														//클릭시 박스 텍스트 제거
     if (answers[ClickCount] != number){
         alert("wrong");
+        lifes--;
+        page();
+        if (lifes == 0){
+        page2();	
+        }
     }
     if (answers[ClickCount] == number){
         alert("correct");
@@ -366,11 +375,17 @@ function IsCorrect(number){
     }
 }
 
-function page(){
+function page(){																//중간결과창으로 이동
 	alert("nextpage");
 	document.form1.level.value = level;
 	document.form1.lifes.value = lifes;
 	document.form1.submit();
+}
+
+function page2(){																//최종결과창으로 이동
+	alert("finalpage");
+	document.form2.score.value = score;
+	document.form2.submit();
 }
 
 function start(){
@@ -378,7 +393,6 @@ function start(){
 	Set();
 	alert(answers);
 	ShowAns();
-	//page();
 }
 
 alert("open");

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Reaction Test</title>
+<title>Chimp-Test</title>
 <style type="text/css">
 
 .box {
@@ -20,10 +20,13 @@
 }
 </style>
 </head>
-<body>
+<body onload="ScoreCheck();">
 <form name="form1" action="ct_nextlevel.jsp" method="post">
   <input type="hidden" name="level" value=""> 
   <input type="hidden" name="lifes" value=""> 
+</form>
+<form name="form2" action="ct_finalresult.jsp" method="post">
+  <input type="hidden" name="score" value=""> 
 </form>
 
 <div class="box" onclick='click_it();'>
@@ -48,6 +51,7 @@ System.out.println(lifes);
 <script>
 var level = <%=level%>;
 var lifes = <%=lifes%>;
+var score = level+2;
 
 function click_it(){
 	alert("click");
@@ -55,6 +59,15 @@ function click_it(){
 	document.form1.lifes.value = lifes;
 	document.form1.submit();
 }
+
+function ScoreCheck(){
+	if (score >= 41 ){				// 41점 이상 달성시 최종결과창 이동
+		alert("finalpage");
+		document.form2.score.value = score;
+		document.form2.submit();
+	}	
+}
+
 
 </script>
 </body>

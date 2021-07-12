@@ -1,15 +1,10 @@
-<%-- 
-  - yukmaro@gmail.com (maroIsRight)
-  - Description: 'Sequence Memory  Test' start page
-  --%>
-
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Chimp-Test</title>
 <style type="text/css">
 .squares{
 	display: grid;
@@ -44,14 +39,18 @@ System.out.println(level);
 System.out.println("lifes");
 System.out.println(lifes);
 %>
-
 <form name="form1" action="ct_midresult.jsp" method="post">
   <input type="hidden" name="level" value=""> 
   <input type="hidden" name="lifes" value=""> 
 </form>
+<form name="form2" action="ct_finalresult.jsp" method="post">
+  <input type="hidden" name="score" value=""> 
+</form>
 
 <div>Level:</div>
-<div id='level'>1</div>
+<div id='level'></div>
+<div>Lifes:</div>
+<div id='lifes'></div>
 <div class="squares">
 <div class="square-row">
 <div id="box1"class="square"onclick="IsCorrect(1)"></div>
@@ -149,7 +148,10 @@ var lifes = <%=lifes%>;
 var score = level+3;
 var ClickCount = 0;
 var count = 0;
-var Num;
+
+//현재상태표시
+document.getElementById("level").innerHTML=level;
+document.getElementById("lifes").innerHTML=lifes;
 
 function Set(){
 	var answerHold = MakeRandomSquence();
@@ -157,17 +159,17 @@ function Set(){
 	answers = arrHold.split(",");
 }
 
-function MakeRandomSquence () {				//랜덤번호 추출기
+function MakeRandomSquence () {													//랜덤번호 추출기
 	let Array = [];
 	let num = 0;
 	while (num < score) {
-		let n = Math.floor(Math.random() * 40) + 1;		//범위설정 1~40
+		let n = Math.floor(Math.random() * 40) + 1;								//범위설정 1~40
 		if (! sameNum(n)) {
 			Array.push(n);
 			num++;
 		}
 	}
-	function sameNum (n) {				//중복제거
+	function sameNum (n) {														//중복제거
 		return Array.find((e) => (e === n));
 	}
 	return Array;
@@ -349,31 +351,56 @@ function ShowAns(){
 	}
 }
 
-function IsCorrect(number){
-    alert(typeof(number)+number);
-    alert(typeof(answers[ClickCount]));
-    if (answers[ClickCount] != number){
+function IsCorrect(number){														//박스 클릭시 판단
+	var clickcheck = 0;
+	var box = document.getElementById("box"+number);
+	box.style.backgroundColor = "lightgreen";									//색깔변환
+    //alert(typeof(number)+number);
+    //alert(typeof(answers[ClickCount]));
+    if (answers[ClickCount] != number){											//틀렸을 때 
         alert("wrong");
+        lifes--;
+        page();
+        if (lifes <= 0){
+        page2();	
+        }
     }
-    if (answers[ClickCount] == number){
+    if (answers[ClickCount] == number){											//알맞게 눌렀을 때
         alert("correct");
         ClickCount++;
+    	var box = document.getElementById("box"+number);						//클릭시 박스 색깔변환
+    	box.style.backgroundColor = "lightgreen";
+    	box.innerHTML = null;													//클릭시 박스 텍스트 제거
+        if (level != 1){
+            textclear();														//레벨이 1이 아닌경우는 모든 텍스트 제거
+        }
     }
-    if (ClickCount == score ){
+    if (ClickCount == score ){													//전부 정답일 때
     	level++;
     	page();
     }
-    if (score >= 41 ){
-    	document.form1.level.value = level;
-    	document.form1.submit();
-    }
 }
 
-function page(){
+function textclear(){															//모든 텍스트 제거
+	if (ClickCount == 1){
+		for (n = 1; n <41; n++) {
+			var Boxs = "box" + n;
+			document.getElementById(Boxs).innerHTML = null;
+			}
+	}
+}
+
+function page(){																//중간결과창으로 이동
 	alert("nextpage");
 	document.form1.level.value = level;
 	document.form1.lifes.value = lifes;
 	document.form1.submit();
+}
+
+function page2(){																//최종결과창으로 이동
+	alert("finalpage");
+	document.form2.score.value = score;
+	document.form2.submit();
 }
 
 function start(){
@@ -381,10 +408,8 @@ function start(){
 	Set();
 	alert(answers);
 	ShowAns();
-	//page();
 }
-
-alert("open");
+alert("nextlevel");
 </script>
 
 
