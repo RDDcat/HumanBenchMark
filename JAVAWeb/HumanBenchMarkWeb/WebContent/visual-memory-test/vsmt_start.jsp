@@ -28,7 +28,7 @@
 </style>
 </head>
 <body onload="Play()">
-<form name="form1" action="vsmt_result.jsp" method="post">
+<form name="form1" action="vsmt_4x4_level.jsp" method="post">
   <input type="hidden" id="life" name="life" value="">
 </form>
 <form name="form2" action="vsmt_result.jsp" method="post">
@@ -36,9 +36,9 @@
 </form>
 
 <div>Level:</div>
-<div id='level'>1</div>
+<div id='showLevel'>1</div>
 <div>LIFE</div>
-<div id="life">3</div>
+<div id='showLife'>3</div>
 <div class="squares">
 <div class="square-row">
 <div id="box1"class="square"onclick="IsCorrect(1)"></div>
@@ -60,13 +60,17 @@
 
 <script>
 var count = 0;
+var time = 1000;
+var level = 1;
+var subLife = 3;
+var life = 3;
 var answer = new Array();
 
 
 function MakeRandomSquence () {
     let Array = [];
     let num = 0;
-    while (num < score) {
+    while (num < level + 2) {
         let n = Math.floor(Math.random() * 9) + 1;
         if (! sameNum(n)) {
             Array.push(n);
@@ -79,32 +83,90 @@ function MakeRandomSquence () {
     return Array;
 }
 
-function IsCorrect(number){
-	alert(typeof(number)+number);
-	alert(typeof(answer[count]));
+function AnswerDel(number){
+	answer = answer.filter((element) => element !== number);
+}
+
+function IsCorrect(number){ 
+	// 맞으면 흰타일 흰타일 다시눌러도 정답및 오답처리 안되게하기 
 	for(count=0;count<level+2;count++){
 		if (answer[count] == number){
 			alert("correct");
+			AnswerDel(number);
+			// 선택된 에니메이션
+			if(Array.isArray(answer) && answer.length === 0){
+				NextLevel();
+			}
+			return;
 		}
+	}
+	// 선택했을때 틀리면 검은 타일 + 목숨 1개 씩 삭감 3개 삭감 되면 라이프 삭감
+	alert("wrong");
+	subLife--;
+	IsWrong();
+}
+
+function NextLevel(){
+	level++;
+	if (level==3){
+		Go4x4();
+	}
+	Play();
+	document.getElementById("showLevel").innerHTML=level;
+	
+}
+
+function IsWrong(){
+	if(subLife<1){
+		life--;
+		Play();
+		document.getElementById("showLife").innerHTML=life;
+		if(life<=0){
+			GoResult();
+		}
+		subLife=3;
 	}
 }
 
+function GoResult(){
+	document.form2.level.value = level;
+	document.form2.submit();
+}
+
+function Go4x4(){
+	document.form1.life.value = life;
+	document.form1.submit();
+}
+
 function AnswerSetting(){
-	alert("레벨에 맞춰 답 생성");
-	MakeRandomSquence();
+	answer = MakeRandomSquence();
+	subLife = 3;
+}
+
+function AnswerShow(){
+	// 정답인 타일 색 바꾸기
+	for(count=0;count<level+2;count++){
+		var box = document.getElementById("box"+answer[count]);
+		box.style.backgroundColor = "blue";
+		
+	}
+	setTimeout(function(){
+		for(count=1;count<10;count++){
+			var box = document.getElementById("box"+count);
+			box.style.backgroundColor = "orange";
+		}
+	},time);
 }
 
 function Play(){
+	alert("시작");
 	AnswerSetting();
+	AnswerShow();
 	
 	
 }
 
 </script>
-
-
-
-
 
 
 
