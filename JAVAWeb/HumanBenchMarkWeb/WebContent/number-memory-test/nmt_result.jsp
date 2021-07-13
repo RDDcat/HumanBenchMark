@@ -26,7 +26,7 @@ String answer = request.getParameter("answer2");
 <button type='button' class='btn btn-info btn-lg' onclick='retry()'>다시 시도</button>
 
 <script>
-var link = '/nmt_start.jsp'
+var link = '/number-memory-test/nmt_start.jsp'
 var randomNumber = <%=randomNumber%>;
 var level = <%=level%>;
 var answer = <%=answer%>;

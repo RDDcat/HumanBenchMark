@@ -26,7 +26,7 @@ String time = request.getParameter("time");
 
 
 <Script>
-var link = '/at_start.jsp'
+var link = '/aim-test/at_start.jsp'
 
 
 function save(){

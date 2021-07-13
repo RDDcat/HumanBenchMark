@@ -15,7 +15,7 @@ System.out.println(level);
 %>
 
 <script>
-var link = '/vsmt_start.jsp'
+var link = '/visual-memory-test/vsmt_start.jsp'
 
 function save(){
 	alert("미구현, DB에 저장!");
