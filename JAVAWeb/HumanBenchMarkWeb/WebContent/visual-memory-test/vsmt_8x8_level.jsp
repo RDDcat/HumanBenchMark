@@ -8,15 +8,15 @@
 <style type="text/css">
 .squares{
 	display: grid;
-	grid-template-rows: 80px 80px 80px 80px 80px 80px;
-    grid-template-columns: 80px 80px 80px 80px 80px 80px;
+	grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 .square{
 	display: flex;
-	width: 80px;
-	height: 80px;
+	width: 50px;
+	height: 50px;
 	background-color: orange;
 	border-radius: 5%;
 	border-width: 10px;
@@ -39,7 +39,7 @@ String  life = request.getParameter("life");
 </form>
 
 <div>Level:</div>
-<div id='showLevel'>10</div>
+<div id='showLevel'>21</div>
 <div>LIFE</div>
 <div id="showLife"><%=life%></div>
 <div class="squares">
@@ -50,24 +50,22 @@ String  life = request.getParameter("life");
 <div id="box4"class="square"onclick="IsCorrect(4)"></div>
 <div id="box5"class="square"onclick="IsCorrect(5)"></div>
 <div id="box6"class="square"onclick="IsCorrect(6)"></div>
-</div>
-<div class="square-row">
 <div id="box7"class="square"onclick="IsCorrect(7)"></div>
 <div id="box8"class="square"onclick="IsCorrect(8)"></div>
+</div>
+<div class="square-row">
 <div id="box9"class="square"onclick="IsCorrect(9)"></div>
 <div id="box10"class="square"onclick="IsCorrect(10)"></div>
 <div id="box11"class="square"onclick="IsCorrect(11)"></div>
 <div id="box12"class="square"onclick="IsCorrect(12)"></div>
-</div>
-<div class="square-row">
 <div id="box13"class="square"onclick="IsCorrect(13)"></div>
 <div id="box14"class="square"onclick="IsCorrect(14)"></div>
 <div id="box15"class="square"onclick="IsCorrect(15)"></div>
 <div id="box16"class="square"onclick="IsCorrect(16)"></div>
-<div id="box17"class="square"onclick="IsCorrect(17)"></div>
-<div id="box18"class="square"onclick="IsCorrect(18)"></div>
 </div>
 <div class="square-row">
+<div id="box17"class="square"onclick="IsCorrect(17)"></div>
+<div id="box18"class="square"onclick="IsCorrect(18)"></div>
 <div id="box19"class="square"onclick="IsCorrect(19)"></div>
 <div id="box20"class="square"onclick="IsCorrect(20)"></div>
 <div id="box21"class="square"onclick="IsCorrect(21)"></div>
@@ -82,14 +80,48 @@ String  life = request.getParameter("life");
 <div id="box28"class="square"onclick="IsCorrect(28)"></div>
 <div id="box29"class="square"onclick="IsCorrect(29)"></div>
 <div id="box30"class="square"onclick="IsCorrect(30)"></div>
-</div>
-<div class="square-row">
 <div id="box31"class="square"onclick="IsCorrect(31)"></div>
 <div id="box32"class="square"onclick="IsCorrect(32)"></div>
+</div>
+<div class="square-row">
 <div id="box33"class="square"onclick="IsCorrect(33)"></div>
 <div id="box34"class="square"onclick="IsCorrect(34)"></div>
 <div id="box35"class="square"onclick="IsCorrect(35)"></div>
 <div id="box36"class="square"onclick="IsCorrect(36)"></div>
+<div id="box37"class="square"onclick="IsCorrect(37)"></div>
+<div id="box38"class="square"onclick="IsCorrect(38)"></div>
+<div id="box39"class="square"onclick="IsCorrect(39)"></div>
+<div id="box40"class="square"onclick="IsCorrect(40)"></div>
+</div>
+<div class="square-row">
+<div id="box41"class="square"onclick="IsCorrect(41)"></div>
+<div id="box42"class="square"onclick="IsCorrect(42)"></div>
+<div id="box43"class="square"onclick="IsCorrect(43)"></div>
+<div id="box44"class="square"onclick="IsCorrect(44)"></div>
+<div id="box45"class="square"onclick="IsCorrect(45)"></div>
+<div id="box46"class="square"onclick="IsCorrect(46)"></div>
+<div id="box47"class="square"onclick="IsCorrect(47)"></div>
+<div id="box48"class="square"onclick="IsCorrect(48)"></div>
+</div>
+<div class="square-row">
+<div id="box49"class="square"onclick="IsCorrect(49)"></div>
+<div id="box50"class="square"onclick="IsCorrect(50)"></div>
+<div id="box51"class="square"onclick="IsCorrect(51)"></div>
+<div id="box52"class="square"onclick="IsCorrect(52)"></div>
+<div id="box53"class="square"onclick="IsCorrect(53)"></div>
+<div id="box54"class="square"onclick="IsCorrect(54)"></div>
+<div id="box55"class="square"onclick="IsCorrect(55)"></div>
+<div id="box56"class="square"onclick="IsCorrect(56)"></div>
+</div>
+<div class="square-row">
+<div id="box57"class="square"onclick="IsCorrect(57)"></div>
+<div id="box58"class="square"onclick="IsCorrect(58)"></div>
+<div id="box59"class="square"onclick="IsCorrect(59)"></div>
+<div id="box60"class="square"onclick="IsCorrect(60)"></div>
+<div id="box61"class="square"onclick="IsCorrect(61)"></div>
+<div id="box62"class="square"onclick="IsCorrect(62)"></div>
+<div id="box63"class="square"onclick="IsCorrect(63)"></div>
+<div id="box64"class="square"onclick="IsCorrect(64)"></div>
 </div>
 </div>
 
@@ -97,7 +129,7 @@ String  life = request.getParameter("life");
 var count = 0;
 var time = 1500;
 var delayTime = 1000;
-var level = 10;
+var level = 21;
 var subLife = 3;
 var life = <%=life%>;
 var answer = new Array();
@@ -108,7 +140,7 @@ function MakeRandomSquence () {
     let Array = [];
     let num = 0;
     while (num < level + 2) {
-        let n = Math.floor(Math.random() * 36) + 1;
+        let n = Math.floor(Math.random() * 64) + 1;
         if (! sameNum(n)) {
             Array.push(n);
             num++;
@@ -155,7 +187,7 @@ function IsCorrect(number){
 
 // 화면 정리
 function ClearPage(){
-	for(count=1;count<37;count++){
+	for(count=1;count<65;count++){
 		var box = document.getElementById("box"+count);
 		box.style.backgroundColor = "orange";
 	}
@@ -176,8 +208,8 @@ function ShowBlack(number){
 function NextLevel(){
 	level++;
 	ClearPage();
-	if (level==15){
-		Go7x7();
+	if (level==30){
+		GoResult();
 	}
 	alreadyAnswer = new Array();
 	setTimeout(function(){
@@ -203,11 +235,6 @@ function IsWrong(number){
 function GoResult(){
 	document.form2.level.value = level;
 	document.form2.submit();
-}
-
-function Go7x7(){
-	document.form1.life.value = life;
-	document.form1.submit();
 }
 
 function SetAnswer(){

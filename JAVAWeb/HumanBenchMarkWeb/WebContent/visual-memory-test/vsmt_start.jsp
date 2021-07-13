@@ -60,11 +60,13 @@
 
 <script>
 var count = 0;
-var time = 1000;
+var time = 1500;
+var delayTime = 1000;
 var level = 1;
 var subLife = 3;
 var life = 3;
 var answer = new Array();
+var alreadyAnswer = new Array();
 
 
 function MakeRandomSquence () {
@@ -87,36 +89,70 @@ function AnswerDel(number){
 	answer = answer.filter((element) => element !== number);
 }
 
+function IsAnswered(number){
+	if (alreadyAnswer.includes(number)){
+		return true;
+	}
+	alreadyAnswer.push(number);
+	return false;
+}
+
 function IsCorrect(number){ 
-	// 맞으면 흰타일 흰타일 다시눌러도 정답및 오답처리 안되게하기 
+	// 만약 응답받은 넘버가 똑같으면 반응 안하기
+	if(IsAnswered(number)){return;}
+	// 맞으면 흰타일 흰타일 다시눌러도 정답및 오답처리 안되게하기 	
 	for(count=0;count<level+2;count++){
 		if (answer[count] == number){
-			alert("correct");
 			AnswerDel(number);
+			ShowBlue(number);
 			// 선택된 에니메이션
 			if(Array.isArray(answer) && answer.length === 0){
-				NextLevel();
+				setTimeout(function(){
+					NextLevel();
+				},delayTime);
 			}
 			return;
 		}
 	}
 	// 선택했을때 틀리면 검은 타일 + 목숨 1개 씩 삭감 3개 삭감 되면 라이프 삭감
-	alert("wrong");
-	subLife--;
-	IsWrong();
+	IsWrong(number);
 }
 
+// 화면 정리
+function ClearPage(){
+	for(count=1;count<10;count++){
+		var box = document.getElementById("box"+count);
+		box.style.backgroundColor = "orange";
+	}
+}
+
+// 받은 숫자에 해당하는 박스 색 파란색으로 칠하기
+function ShowBlue(number){
+	var box = document.getElementById("box"+number);
+	box.style.backgroundColor = "blue";
+}
+
+function ShowBlack(number){
+	var box = document.getElementById("box"+number);
+	box.style.backgroundColor = "black";
+}
+
+// 다음 단계로
 function NextLevel(){
 	level++;
+	ClearPage();
 	if (level==3){
 		Go4x4();
 	}
-	Play();
+	setTimeout(function(){
+		Play();
+	},delayTime);
 	document.getElementById("showLevel").innerHTML=level;
-	
 }
 
-function IsWrong(){
+function IsWrong(number){
+	subLife--;
+	ShowBlack(number);
 	if(subLife<1){
 		life--;
 		Play();
@@ -138,31 +174,26 @@ function Go4x4(){
 	document.form1.submit();
 }
 
-function AnswerSetting(){
+function SetAnswer(){
 	answer = MakeRandomSquence();
 	subLife = 3;
+	alreadyAnswer = new Array(); //답지 제출  초기화
 }
 
-function AnswerShow(){
+function ShowAnswer(){
 	// 정답인 타일 색 바꾸기
+	ClearPage();
 	for(count=0;count<level+2;count++){
-		var box = document.getElementById("box"+answer[count]);
-		box.style.backgroundColor = "blue";
-		
+		ShowBlue(answer[count]);
 	}
 	setTimeout(function(){
-		for(count=1;count<10;count++){
-			var box = document.getElementById("box"+count);
-			box.style.backgroundColor = "orange";
-		}
+		ClearPage();
 	},time);
 }
 
 function Play(){
-	alert("시작");
-	AnswerSetting();
-	AnswerShow();
-	
+	SetAnswer();
+	ShowAnswer();
 	
 }
 
