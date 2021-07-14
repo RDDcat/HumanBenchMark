@@ -15,7 +15,7 @@ System.out.println(level);
 %>
 
 <script>
-var link = '/smt_start.jsp'
+var link = '/sequence-memory-test/smt_start.jsp'
 
 function save(){
 	alert("미구현, DB에 저장!");
