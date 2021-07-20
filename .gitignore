@@ -119,6 +119,7 @@ captures/
 
 # Google Services (e.g. APIs or Firebase)
 # google-services.json
+google-services.json
 
 # Android Patch
 gen-external-apklibs
@@ -203,6 +204,8 @@ crashlytics-build.properties
 fabric.properties
 
 ### AndroidStudio Patch ###
+
+
 
 !/gradle/wrapper/gradle-wrapper.jar
 
