@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -25,6 +26,6 @@ public class SplashActivity extends AppCompatActivity {
                 Intent intent =  new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(intent);
             }
-        }, 500);
+        }, 1500);
     }
 }
