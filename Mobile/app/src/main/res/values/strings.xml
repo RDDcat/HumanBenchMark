@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HumanBenchMark_Android</string>
+    <string name="aimtestbuttona">aimTestButton</string>
 </resources>

@@ -16,7 +16,7 @@ public class TypingTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_typing_test);
 
-        webView = (WebView) findViewById(R.id.webViewVisualMemoryTest);
+        webView = (WebView) findViewById(R.id.webViewTypingTest);
 
         webView.setWebViewClient(new WebViewClient());
         webSettings = webView.getSettings();
@@ -26,6 +26,7 @@ public class TypingTestActivity extends AppCompatActivity {
         webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         webSettings.setDomStorageEnabled(true);
-        webView.loadUrl("http://118.67.129.193/typing-test/tt_open.jsp\n");
+        webView.loadUrl("http://118.67.129.193/typing-test/tt_open.jsp");
+
     }
 }

@@ -16,7 +16,7 @@ public class NumberMemoryTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_memory_test);
 
-        webView = (WebView) findViewById(R.id.webViewVisualMemoryTest);
+        webView = (WebView) findViewById(R.id.webViewNumberMemoryTest);
 
         webView.setWebViewClient(new WebViewClient());
         webSettings = webView.getSettings();

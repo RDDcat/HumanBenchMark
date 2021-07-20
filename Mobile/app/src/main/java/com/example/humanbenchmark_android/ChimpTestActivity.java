@@ -16,7 +16,7 @@ public class ChimpTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chimp_test);
 
-        webView = (WebView) findViewById(R.id.webViewVisualMemoryTest);
+        webView = (WebView) findViewById(R.id.webViewChimpTest);
 
         webView.setWebViewClient(new WebViewClient());
         webSettings = webView.getSettings();

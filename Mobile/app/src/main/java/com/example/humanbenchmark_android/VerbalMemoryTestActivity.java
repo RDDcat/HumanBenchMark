@@ -16,7 +16,7 @@ public class VerbalMemoryTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verbal_memory_test);
 
-        webView = (WebView) findViewById(R.id.webViewVisualMemoryTest);
+        webView = (WebView) findViewById(R.id.webViewVerbalMemoryTest);
 
         webView.setWebViewClient(new WebViewClient());
         webSettings = webView.getSettings();

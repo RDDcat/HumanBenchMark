@@ -16,7 +16,7 @@ public class ReactionTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_test);
 
-        webView = (WebView) findViewById(R.id.webViewVisualMemoryTest);
+        webView = (WebView) findViewById(R.id.webViewReactionTest);
 
         webView.setWebViewClient(new WebViewClient());
         webSettings = webView.getSettings();
