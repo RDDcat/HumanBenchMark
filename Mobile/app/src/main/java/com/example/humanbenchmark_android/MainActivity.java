@@ -5,13 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView tv_userName; // 유저 닉네임
+    private ImageView iv_profile; // 유저 프로필
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent i =getIntent();
+        String nickName = i.getStringExtra("nickName");
+        String photoURL = i.getStringExtra("photoURL");
+
+        tv_userName = findViewById(R.id.tv_userName);
+        tv_userName.setText(nickName);
+
+        iv_profile = findViewById(R.id.iv_profile);
+        Glide.with(this).load(photoURL).into(iv_profile);
 
         Button aimTestButton = findViewById(R.id.aimTestButton);
         Button chimpTestButton = findViewById(R.id.chimpTestButton);
