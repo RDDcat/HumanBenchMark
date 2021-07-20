@@ -11,10 +11,12 @@
         android:id="@+id/aimTestButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/aimtestbuttona"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/visualMemoryTestButton" />
+        app:layout_constraintTop_toBottomOf="@+id/visualMemoryTestButton"
+        tools:text="aimTestButton" />
 
     <Button
         android:id="@+id/chimpTestButton"
@@ -23,7 +25,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aimTestButton" />
+        app:layout_constraintTop_toBottomOf="@+id/aimTestButton"
+        tools:text="chimpTestButton" />
 
     <Button
         android:id="@+id/numberMemoryTestButton"
@@ -32,7 +35,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verbalMemoryTestButton" />
+        app:layout_constraintTop_toBottomOf="@+id/verbalMemoryTestButton"
+        tools:text="numberMemoryTestButton" />
 
     <Button
         android:id="@+id/reactionTestButton"
@@ -41,7 +45,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chimpTestButton" />
+        app:layout_constraintTop_toBottomOf="@+id/chimpTestButton"
+        tools:text="reactionTestButton" />
 
     <Button
         android:id="@+id/sequenceMemoryTestButton"
@@ -50,7 +55,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="sequenceMemoryTestButton" />
 
 
     <Button
@@ -60,7 +66,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reactionTestButton" />
+        app:layout_constraintTop_toBottomOf="@+id/reactionTestButton"
+        tools:text="typingTestButton" />
 
     <Button
         android:id="@+id/verbalMemoryTestButton"
@@ -69,7 +76,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/typingTestButton" />
+        app:layout_constraintTop_toBottomOf="@+id/typingTestButton"
+        tools:text="verbalMemoryTestButton" />
 
     <Button
         android:id="@+id/visualMemoryTestButton"
@@ -78,7 +86,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sequenceMemoryTestButton" />
+        app:layout_constraintTop_toBottomOf="@+id/sequenceMemoryTestButton"
+        tools:text="visualMemoryTestButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

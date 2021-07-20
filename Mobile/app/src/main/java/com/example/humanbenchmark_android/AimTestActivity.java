@@ -16,7 +16,7 @@ public class AimTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aim_test);
 
-        webView = (WebView) findViewById(R.id.webViewVisualMemoryTest);
+        webView = (WebView) findViewById(R.id.webViewAimTest);
 
         webView.setWebViewClient(new WebViewClient());
         webSettings = webView.getSettings();
