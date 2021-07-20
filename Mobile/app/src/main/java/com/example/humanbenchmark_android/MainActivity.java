@@ -7,29 +7,20 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button aimTestButton;
-    private Button chimpTestButton;
-    private Button numberMemoryTestButton;
-    private Button reactionTestButton;
-    private Button sequenceMemoryTestButton;
-    private Button typingTestButton;
-    private Button verbalMemoryTestButton;
-    private Button visualMemoryTestButton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        aimTestButton =  findViewById(R.id.aimTestButton);
-        chimpTestButton =  findViewById(R.id.chimpTestButton);
-        numberMemoryTestButton =  findViewById(R.id.numberMemoryTestButton);
-        reactionTestButton =  findViewById(R.id.reactionTestButton);
-        sequenceMemoryTestButton =  findViewById(R.id.sequenceMemoryTestButton);
-        typingTestButton =  findViewById(R.id.typingTestButton);
-        verbalMemoryTestButton =  findViewById(R.id.verbalMemoryTestButton);
-        visualMemoryTestButton =  findViewById(R.id.visualMemoryTestButton);
+        Button aimTestButton = findViewById(R.id.aimTestButton);
+        Button chimpTestButton = findViewById(R.id.chimpTestButton);
+        Button numberMemoryTestButton = findViewById(R.id.numberMemoryTestButton);
+        Button reactionTestButton = findViewById(R.id.reactionTestButton);
+        Button sequenceMemoryTestButton = findViewById(R.id.sequenceMemoryTestButton);
+        Button typingTestButton = findViewById(R.id.typingTestButton);
+        Button verbalMemoryTestButton = findViewById(R.id.verbalMemoryTestButton);
+        Button visualMemoryTestButton = findViewById(R.id.visualMemoryTestButton);
 
         aimTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), AimTestActivity.class);
