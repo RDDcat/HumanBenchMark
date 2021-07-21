@@ -6,14 +6,26 @@
 <meta charset="EUC-KR">
 <title>Reaction Test</title>
 <style type="text/css">
+body {background-color : skyblue;}
+
 .box {
-  margin : 20px; 
-  padding : 30px;
-  border : 1px solid black;
-  border-radius : 5px;
-  width: 500px;
-  height:300px;
-  background-color: lightblue;
+	position: absolute; 
+	left: 50%; 
+	transform: translateX(-50%);
+	border : 0px solid white;
+	width: 90%;
+	height:90%;
+	background-color: skyblue;
+	max-width:960px;
+}
+div { position:relative; }
+#cm { position:absolute; } 
+.hc { width:300px; left:0; right:0; margin-left:auto; margin-right:auto; } /* 가로 중앙 정렬 */ 
+.vc { height:20px; top: 0; bottom:0; margin-top:auto; margin-bottom:auto; } /* 세로 중앙 정렬 */
+p{
+	font-size:120px;
+	color:white;		
+	text-align: justify;
 }
 </style>
 </head>
@@ -59,7 +71,7 @@ function click_it(){
 </script>
 
 <div class="box" onclick='click_it();'>
-Too Fast!<br> click to try again.
+<p>Too Fast!</p><br><p> click to try again.</p>
 </div>
 
 </body>
