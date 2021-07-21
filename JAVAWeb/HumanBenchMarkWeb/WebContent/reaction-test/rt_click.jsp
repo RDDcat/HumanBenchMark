@@ -7,13 +7,24 @@
 <title>Reaction Test</title>
 <style type="text/css">
 .box {
-  margin : 20px; 
-  padding : 30px;
-  border : 1px solid black;
-  border-radius : 5px;
-  width: 500px;
-  height:300px;
-  background-color: lightgreen;
+	position: absolute; 
+	left: 50%; 
+	transform: translateX(-50%);
+	border : 1px solid white;
+	width: 90%;
+	height:90%;
+	background-color: lightgreen;
+	max-width:960px;
+}
+div { position:relative; }
+#cm { position:absolute; }
+.hc { width:300px; left:0; right:0; margin-left:auto; margin-right:auto; } /* 가로 중앙 정렬 */ 
+.vc { height:450px; top: 0; bottom:0; margin-top:auto; margin-bottom:auto; } /* 세로 중앙 정렬 */
+p{
+	width:100px;
+	font-size:120px;
+	color:white;
+	text-align: justify;
 }
 </style>
 </head>
@@ -30,8 +41,7 @@
   <input type="hidden" name="average" value="">
 </form>
 <div class="box" onclick='click_it();'>
-Click!
-
+<p id ="cm" class = "hc vc">Click!</p>
 </div>
 <%
 String  clickcount =request.getParameter("clickcount");
@@ -42,7 +52,7 @@ String  clickvalue4 =request.getParameter("clickvalue4");
 
 System.out.println("클릭");
 System.out.println(clickcount);
-System.out.println(clickvalue1);
+System.out.println(clickvsalue1);
 System.out.println(clickvalue2);
 System.out.println(clickvalue3);
 System.out.println(clickvalue4);
@@ -70,7 +80,7 @@ function click_it(){
 	}else if (clickcount==4){
 		clickvalue4 = nowTime;
 	}
-    clickcount=clickcount+1;
+    clickcount=clickcount+1;s
     document.form1.clickcount.value = clickcount;
     document.form1.clickvalue1.value = clickvalue1;
     document.form1.clickvalue2.value = clickvalue2;
