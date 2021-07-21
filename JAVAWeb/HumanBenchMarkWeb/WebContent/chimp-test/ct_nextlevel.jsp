@@ -6,17 +6,21 @@
 <meta charset="EUC-KR">
 <title>Chimp-Test</title>
 <style type="text/css">
-.squares{
+.square-container{
+	display:-webkit-flex;
 	display: grid;
-	grid-template-rows: 100px 100px 100px;
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+	width: 100%;
+	height: 1150px;
+	grid-template-rows: 140px 140px 140px 140px 140px 140px 140px 140pxs;
+    grid-template-columns: 140px 140px 140px 140px 140px;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 .square{
+	display:-webkit-flex;
 	display: flex;
-	width: 80px;
-	height: 80px;
+	width: 120px;
+	height: 120px;
 	background-color: lightgreen;
 	border-radius: 5%;
 	border-width: 10px;
@@ -51,94 +55,57 @@ System.out.println(lifes);
 <div id='level'></div>
 <div>Lifes:</div>
 <div id='lifes'></div>
-<div class="squares">
+
+<div class="square-container">
 <div class="square-row">
-<div id="box1"class="square"onclick="IsCorrect(1)"></div>
-<br>
-<div id="box2"class="square"onclick="IsCorrect(2)"></div>
-<br>
-<div id="box3"class="square"onclick="IsCorrect(3)"></div>
-<br>
-<div id="box4"class="square"onclick="IsCorrect(4)"></div>
-<br>
-<div id="box5"class="square"onclick="IsCorrect(5)"></div>
+<div id="box1"class="square"onclick="IsCorrect(1)"></div><br>
+<div id="box2"class="square"onclick="IsCorrect(2)"></div><br>
+<div id="box3"class="square"onclick="IsCorrect(3)"></div><br>
+<div id="box4"class="square"onclick="IsCorrect(4)"></div><br>
+<div id="box5"class="square"onclick="IsCorrect(5)"></div><br>
+<div id="box6"class="square"onclick="IsCorrect(6)"></div><br>
+<div id="box7"class="square"onclick="IsCorrect(7)"></div><br>
+<div id="box8"class="square"onclick="IsCorrect(8)"></div><br>
 </div>
 <div class="square-row">
-<div id="box6"class="square"onclick="IsCorrect(6)"></div>
-<br>
-<div id="box7"class="square"onclick="IsCorrect(7)"></div>
-<br>
-<div id="box8"class="square"onclick="IsCorrect(8)"></div>
-<br>
-<div id="box9"class="square"onclick="IsCorrect(9)"></div>
-<br>
-<div id="box10"class="square"onclick="IsCorrect(10)"></div>
+<div id="box9"class="square"onclick="IsCorrect(9)"></div><br>
+<div id="box10"class="square"onclick="IsCorrect(10)"></div><br>
+<div id="box11"class="square"onclick="IsCorrect(11)"></div><br>
+<div id="box12"class="square"onclick="IsCorrect(12)"></div><br>
+<div id="box13"class="square"onclick="IsCorrect(13)"></div><br>
+<div id="box14"class="square"onclick="IsCorrect(14)"></div><br>
+<div id="box15"class="square"onclick="IsCorrect(15)"></div><br>
+<div id="box16"class="square"onclick="IsCorrect(16)"></div><br>
 </div>
 <div class="square-row">
-<div id="box11"class="square"onclick="IsCorrect(11)"></div>
-<br>
-<div id="box12"class="square"onclick="IsCorrect(12)"></div>
-<br>
-<div id="box13"class="square"onclick="IsCorrect(13)"></div>
-<br>
-<div id="box14"class="square"onclick="IsCorrect(14)"></div>
-<br>
-<div id="box15"class="square"onclick="IsCorrect(15)"></div>
+<div id="box17"class="square"onclick="IsCorrect(17)"></div><br>
+<div id="box18"class="square"onclick="IsCorrect(18)"></div><br>
+<div id="box19"class="square"onclick="IsCorrect(19)"></div><br>
+<div id="box20"class="square"onclick="IsCorrect(20)"></div><br>
+<div id="box21"class="square"onclick="IsCorrect(21)"></div><br>
+<div id="box22"class="square"onclick="IsCorrect(22)"></div><br>
+<div id="box23"class="square"onclick="IsCorrect(23)"></div><br>
+<div id="box24"class="square"onclick="IsCorrect(24)"></div><br>
 </div>
 <div class="square-row">
-<div id="box16"class="square"onclick="IsCorrect(16)"></div>
-<br>
-<div id="box17"class="square"onclick="IsCorrect(17)"></div>
-<br>
-<div id="box18"class="square"onclick="IsCorrect(18)"></div>
-<br>
-<div id="box19"class="square"onclick="IsCorrect(19)"></div>
-<br>
-<div id="box20"class="square"onclick="IsCorrect(20)"></div>
+<div id="box25"class="square"onclick="IsCorrect(25)"></div><br>
+<div id="box26"class="square"onclick="IsCorrect(26)"></div><br>
+<div id="box27"class="square"onclick="IsCorrect(27)"></div><br>
+<div id="box28"class="square"onclick="IsCorrect(28)"></div><br>
+<div id="box29"class="square"onclick="IsCorrect(29)"></div><br>
+<div id="box30"class="square"onclick="IsCorrect(30)"></div><br>
+<div id="box31"class="square"onclick="IsCorrect(31)"></div><br>
+<div id="box32"class="square"onclick="IsCorrect(32)"></div><br>
 </div>
 <div class="square-row">
-<div id="box21"class="square"onclick="IsCorrect(21)"></div>
-<br>
-<div id="box22"class="square"onclick="IsCorrect(22)"></div>
-<br>
-<div id="box23"class="square"onclick="IsCorrect(23)"></div>
-<br>
-<div id="box24"class="square"onclick="IsCorrect(24)"></div>
-<br>
-<div id="box25"class="square"onclick="IsCorrect(25)"></div>
-</div>
-<div class="square-row">
-<div id="box26"class="square"onclick="IsCorrect(26)"></div>
-<br>
-<div id="box27"class="square"onclick="IsCorrect(27)"></div>
-<br>
-<div id="box28"class="square"onclick="IsCorrect(28)"></div>
-<br>
-<div id="box29"class="square"onclick="IsCorrect(29)"></div>
-<br>
-<div id="box30"class="square"onclick="IsCorrect(30)"></div>
-</div>
-<div class="square-row">
-<div id="box31"class="square"onclick="IsCorrect(31)"></div>
-<br>
-<div id="box32"class="square"onclick="IsCorrect(32)"></div>
-<br>
-<div id="box33"class="square"onclick="IsCorrect(33)"></div>
-<br>
-<div id="box34"class="square"onclick="IsCorrect(34)"></div>
-<br>
-<div id="box35"class="square"onclick="IsCorrect(35)"></div>
-</div>
-<div class="square-row">
-<div id="box36"class="square"onclick="IsCorrect(36)"></div>
-<br>
-<div id="box37"class="square"onclick="IsCorrect(37)"></div>
-<br>
-<div id="box38"class="square"onclick="IsCorrect(38)"></div>
-<br>
-<div id="box39"class="square"onclick="IsCorrect(39)"></div>
-<br>
-<div id="box40"class="square"onclick="IsCorrect(40)"></div>
+<div id="box33"class="square"onclick="IsCorrect(33)"></div><br>
+<div id="box34"class="square"onclick="IsCorrect(34)"></div><br>
+<div id="box35"class="square"onclick="IsCorrect(35)"></div><br>
+<div id="box36"class="square"onclick="IsCorrect(36)"></div><br>
+<div id="box37"class="square"onclick="IsCorrect(37)"></div><br>
+<div id="box38"class="square"onclick="IsCorrect(38)"></div><br>
+<div id="box39"class="square"onclick="IsCorrect(39)"></div><br>
+<div id="box40"class="square"onclick="IsCorrect(40)"></div><br>
 </div>
 </div>
 
@@ -351,14 +318,25 @@ function ShowAns(){
 	}
 }
 
+function IsAnswered(number){
+	if (answers.includes(number)){
+		return true;
+	}
+	answers.push(number);
+	return false;
+}
+
 function IsCorrect(number){														//박스 클릭시 판단
 	var clickcheck = 0;
 	var box = document.getElementById("box"+number);
 	box.style.backgroundColor = "lightgreen";									//색깔변환
     //alert(typeof(number)+number);
     //alert(typeof(answers[ClickCount]));
+	// 만약 응답받은 넘버가 똑같으면 반응 안하기
+	if(IsAnswered(number)){return;}
+	// 맞으면 흰타일 흰타일 다시눌러도 정답및 오답처리 안되게하기 
     if (answers[ClickCount] != number){											//틀렸을 때 
-        alert("wrong");
+        //alert("wrong");
         lifes--;
         page();
         if (lifes <= 0){
@@ -366,7 +344,7 @@ function IsCorrect(number){														//박스 클릭시 판단
         }
     }
     if (answers[ClickCount] == number){											//알맞게 눌렀을 때
-        alert("correct");
+        //alert("correct");
         ClickCount++;
     	var box = document.getElementById("box"+number);						//클릭시 박스 색깔변환
     	box.style.backgroundColor = "lightgreen";
@@ -391,14 +369,14 @@ function textclear(){															//모든 텍스트 제거
 }
 
 function page(){																//중간결과창으로 이동
-	alert("nextpage");
+	//alert("nextpage");
 	document.form1.level.value = level;
 	document.form1.lifes.value = lifes;
 	document.form1.submit();
 }
 
 function page2(){																//최종결과창으로 이동
-	alert("finalpage");
+	//alert("finalpage");
 	document.form2.score.value = score;
 	document.form2.submit();
 }
@@ -406,10 +384,10 @@ function page2(){																//최종결과창으로 이동
 function start(){
 	MakeRandomSquence();
 	Set();
-	alert(answers);
+	//alert(answers);
 	ShowAns();
 }
-alert("nextlevel");
+//alert("nextlevel");
 </script>
 
 

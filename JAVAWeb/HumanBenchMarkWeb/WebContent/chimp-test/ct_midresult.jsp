@@ -9,14 +9,16 @@
 <title>Chimp-Test</title>
 <style type="text/css">
 
+
 .box {
-  margin : 20px; 
-  padding : 30px;
-  border : 1px solid black;
-  border-radius : 5px;
-  width: 500px;
-  height:300px;
-  background-color: skyblue;
+	position: absolute; 
+	left: 50%; 
+	transform: translateX(-50%);
+	border : 1px solid white;
+	width: 90%;
+	height:90%;
+	background-color: skyblue;
+	max-width:960px;
 }
 </style>
 </head>
@@ -54,7 +56,7 @@ var lifes = <%=lifes%>;
 var score = level+2;
 
 function click_it(){
-	alert("click");
+	//alert("click");
 	document.form1.level.value = level;
 	document.form1.lifes.value = lifes;
 	document.form1.submit();
@@ -62,7 +64,7 @@ function click_it(){
 
 function ScoreCheck(){
 	if (score >= 41 ){				// 41점 이상 달성시 최종결과창 이동
-		alert("finalpage");
+		alert("최고점수를 달성했습니다!");
 		document.form2.score.value = score;
 		document.form2.submit();
 	}	
