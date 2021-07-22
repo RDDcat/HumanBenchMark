@@ -5,19 +5,18 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/main.css">
+<link rel="stylesheet" href="main.css">
 </head>
 <body onload="Play()">
 <form name="form1" action="at_result.jsp" method="post">
   <input type="hidden" id="time" name="time" value="">
 </form>
 
-<div class="wrapper">
-    <div id="scoreboard">
-        남은 목표수: <div id="left">20</div>
+<div class="container">
+    <div class="left-font" id="scoreboard">
+        남은 목표수<div class="left-font" id="left">20</div>
     </div>
-    <div id="aimmap">
-
+    <div id="aimmap" >
     </div>
 </div>
 
@@ -55,10 +54,10 @@ function target() {
     let div = document.createElement('div');
     div.setAttribute('class', 'target');
     div.style.position = "absolute";
-    let x = Math.floor(Math.random() * (400-1) + 1);
-    let y = Math.floor(Math.random() * (700-1) + 1);
+    let x = Math.floor(Math.random() * (400-1) + 1) + 300;
+    let y = Math.floor(Math.random() * (1000-1) + 1) + 400;
     div.style.left = x+'px';
-    div.style.top = y+'px';
+    div.style.top = y+ 'px';
     map.appendChild(div);
     startTime = new Date().getTime(); //타켓 생성 후 시간측정 시작점
     //클릭 받기

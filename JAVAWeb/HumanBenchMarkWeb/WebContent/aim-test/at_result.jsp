@@ -4,27 +4,28 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Aim-Test Result</title>
+<link rel="stylesheet" href="main.css">
 </head>
 <body>
 <%
 String time = request.getParameter("time");
 %>
-
-
-
-
-<h1>result</h1>
-<div>걸린 시간</div>
-<div id="time"><%=time%></div>
-
-<div></div> 
-<div id="ans"></div>
-
-<button type='button' class='btn btn-success btn-lg' onclick='save()'>저장</button>
-<button type='button' class='btn btn-info btn-lg' onclick='retry()'>다시 시도</button>
-
-
+<div class="result-container">
+	<div class="header">
+		<div class="title-font">
+		result
+		</div>
+	</div>
+	<div class="middle">
+		<div class="result-font">걸린 시간 : </div>
+		<div class="result-font" id="time"><%=time%>ms</div>
+	</div>
+	<div class="btn-container">
+		<button type='button' class='btn_save' onclick='save()'>저장</button>
+		<button type='button' class='btn_restart' onclick='retry()'>다시 시도</button>
+	</div>
+	</div>
 <Script>
 var link = '/aim-test/at_start.jsp'
 
