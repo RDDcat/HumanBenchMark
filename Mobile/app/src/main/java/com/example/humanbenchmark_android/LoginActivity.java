@@ -1,13 +1,13 @@
 package com.example.humanbenchmark_android;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -64,28 +64,31 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == REQ_SIGN_GOOGLE){
+
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if(result.isSuccess()){ // 인증결과가성공적이면
                 GoogleSignInAccount account =result.getSignInAccount(); // account라는  데이터는 구글 로그인정보를 담고있다.
                 resultLogin(account); // 로그인결과값 출력  메소드
+                Toast.makeText(LoginActivity.this,account.getIdToken(), Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void resultLogin(GoogleSignInAccount account) {
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull @org.jetbrains.annotations.NotNull Task<AuthResult> task) {
                         if(task.isSuccessful()){//로그인 성공
-                            Toast.makeText(LoginActivity.this, "로그인성공", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(LoginActivity.this, "로그인성공", Toast.LENGTH_SHORT).show();
                             Intent  intent = new Intent(getApplicationContext(),MainActivity.class);
                             intent.putExtra("nickName",account.getDisplayName());
                             intent.putExtra("photoURL",String.valueOf(account.getPhotoUrl()));
                             startActivity(intent);
                         }else{ //로그인 실패
-                            Toast.makeText(LoginActivity.this, "로그인성공", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(LoginActivity.this, "로그인성공", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
