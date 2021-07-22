@@ -69,7 +69,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             if(result.isSuccess()){ // 인증결과가성공적이면
                 GoogleSignInAccount account =result.getSignInAccount(); // account라는  데이터는 구글 로그인정보를 담고있다.
                 resultLogin(account); // 로그인결과값 출력  메소드
-                Toast.makeText(LoginActivity.this,account.getIdToken(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,account.getId(), Toast.LENGTH_SHORT).show();
+
             }
         }
     }
