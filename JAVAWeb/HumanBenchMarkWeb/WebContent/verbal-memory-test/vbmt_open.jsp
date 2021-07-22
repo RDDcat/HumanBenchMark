@@ -5,18 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Verbal-memory-Test</title>
-<style type="text/css">
-
-.box {
-  margin : 20px; 
-  padding : 30px;
-  border : 0px solid black;
-  border-radius : 5px;
-  width: 500px;
-  height:300px;
-  background-color: skyblue;
-}
-</style>
+<link rel="stylesheet" href="vbmt-style.css">
 </head>
 <body onload="start();">
 <%
@@ -32,18 +21,18 @@ System.out.println(score);
 
 
 
-<div class="box">
-<div>score:</div><div id='score'></div>
-<div>Lifes:</div><div id='lifes'></div>
-전에 본것 입니까?<br>
-<br>
-<div id='ShowWord'></div>
-<br>
-<br>
-<button type='button' class='btn btn-seen btn-lg' onclick='Seen()'>이미 본거야~</button>
-<button type='button' class='btn btn-new btn-lg' onclick='New()'>새롭다!</button>
-
-</div>
+<div class="result-container">
+	<div class="bold-font">score</div>
+	<div class="normal-font" id='score'></div>
+	<div class="bold-font">Lifes</div>
+	<div class="normal-font" id='lifes'></div>
+	<div class="normal2-font">전에 본것 입니까?</div>
+	<div class="answer-font" id='ShowWord'></div>
+	<div class="btn-container">
+		<button class="btn_normal" type='button' class='btn btn-seen btn-lg' onclick='Seen()'>이미 본거야~</button>
+		<button class="btn_normal" type='button' class='btn btn-new btn-lg' onclick='New()'>새롭다!</button>
+	</div>
+	</div>
 
 
 <script type="text/javascript">
