@@ -14,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_userName; // 유저 닉네임
     private ImageView iv_profile; // 유저 프로필
 
+    private void uidSend(Intent Intent, String uid){
+        Intent.putExtra("uid",uid);
+        startActivity(Intent);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i =getIntent();
         String nickName = i.getStringExtra("nickName");
         String photoURL = i.getStringExtra("photoURL");
+        String uid = i.getStringExtra("uid");
+
+
+
 
         tv_userName = findViewById(R.id.tv_userName);
         tv_userName.setText(nickName);
@@ -41,43 +50,42 @@ public class MainActivity extends AppCompatActivity {
 
         aimTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), AimTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
 
         chimpTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), ChimpTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
 
         numberMemoryTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), NumberMemoryTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
 
         reactionTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), ReactionTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
 
         sequenceMemoryTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), SequenceMemoryTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
 
         typingTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), TypingTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
 
         verbalMemoryTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), VerbalMemoryTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
 
         visualMemoryTestButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), VisualMemoryTestActivity.class);
-            startActivity(intent);
+            uidSend(intent, uid);
         });
-
     }
 }
