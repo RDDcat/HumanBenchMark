@@ -5,23 +5,26 @@
 <head>
 <meta charset="EUC-KR">
 <link rel="stylesheet" href="/css/bootstrap.css" />
-<title>Insert title here</title>
-</head>
+<title>Number Memory Test</title>
+<link rel="stylesheet"  href="nmt-style.css"></head>
 <body>
 <% 
 request.setCharacterEncoding("utf-8");
 String randomNumber = request.getParameter("randomNumber");
 String level =  request.getParameter("level");
 %>
-
-<div class="box"> 
-	<h1>방금 나타난 숫자는 무엇인가요?</h1>
-	<span>정답을 입력하세요!</span>
+<div class="box-container">
+		<div class="title-font">방금 나타난 숫자는 무엇인가요?</div>
+		<div class="descrpt-font">정답을 입력하세요!</div>
+		<input class="middle" type="text" id='answer' onkeyup='submitAnswer()'>
+		<div class="normal-font" id='result'></div>
+		<div class="btn_container">
+			<button type='button' class='btn_next' onclick='submit()'>제출하기</button>
+		</div>
 </div>
 
 <%-- <input type='hidden' id='randomNumber' value="<%=randomNumber%>"/> --%>
-<input type="text" id='answer' onkeyup='submitAnswer()'>
-<div id='result'></div>
+
 
 <script>
 var randomNumber = <%=randomNumber%>;
@@ -57,7 +60,7 @@ function submit(){
 }
 </script>
 
-<button type='button' class='btn btn-warning btn-lg' onclick='submit()'>제출하기</button>
+
 
 <form name="form1" action="nmt_correct.jsp" method="post">
   <input type="hidden" id="randomNumber" name="randomNumber" value="">

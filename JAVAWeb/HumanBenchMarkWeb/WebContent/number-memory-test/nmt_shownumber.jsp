@@ -5,15 +5,18 @@
 <head>
 <meta charset="EUC-KR">
 <link rel="stylesheet" href="/css/bootstrap.css" />
-<title>Insert title here</title>
-</head>
+<title>Number Memory Test</title>
+<link rel="stylesheet"  href="nmt-style.css"></head>
 <body>
 <% 
 request.setCharacterEncoding("utf-8");
 String level =  request.getParameter("level");
 %>
-
-
+<div class="container">
+	<div class="font-container">
+		<div class="answer-font" id="rand_num"></div>
+	</div>
+</div>
 <script>
 var randomNumber = 0;
 var level = <%=level%>+1;
@@ -21,7 +24,7 @@ var level = <%=level%>+1;
 
 function setting(){
 	randomNumber = Math.floor((Math.random() * 9 * Math.pow(10, level-1)) + Math.pow(10, level-1));
-	document.write('<h2>'+randomNumber+'</h2>');	
+	document.getElementById("rand_num").innerHTML=randomNumber;
 }
 
 setting();

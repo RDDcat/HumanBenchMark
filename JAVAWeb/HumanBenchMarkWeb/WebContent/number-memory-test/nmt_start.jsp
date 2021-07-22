@@ -5,7 +5,8 @@
 <head>
 <meta charset="EUC-KR">
 <link rel="stylesheet" href="/css/bootstrap.css" />
-<title>Insert title here</title>
+<title>Number Memory Test</title>
+<link rel="stylesheet"  href="nmt-style.css">
 </head>
 <body>
 <form name="form1" action="nmt_submitanswer.jsp" method="post">
@@ -13,6 +14,11 @@
   <input type="hidden" id="level" name="level" value="">
   <input type="hidden" name="answer" value="">
 </form>
+<div class="container">
+	<div class="font-container">
+		<div class="answer-font" id="rand_num"></div>
+	</div>
+</div>
 
 <script>
 var randomNumber = 0;
@@ -20,7 +26,7 @@ var level = 1;
 
 function setting(){ 
 	randomNumber = Math.floor(Math.random() * 10);
-	document.write('<H2>'+randomNumber+'</H2>');
+	document.getElementById("rand_num").innerHTML=randomNumber;
 }
 
 setting();
