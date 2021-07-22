@@ -18,9 +18,11 @@
 		<div class="result-font">최종 결과 : </div>
 		<div class="result-font" id="score"></div>
 	</div>
-	<button type='button' class='btn_save' onclick='save()'>저장</button>
-	<button type='button' class='btn_restart' onclick='retry()'>다시 시도</button>
-</div>
+	<div class="btn-container">
+		<button type='button' class='btn_save' onclick='save()'>저장</button>
+		<button type='button' class='btn_restart' onclick='retry()'>다시 시도</button>
+	</div>
+	</div>
 <%
 request.setCharacterEncoding("utf-8");
 String score = request.getParameter("score");

@@ -115,6 +115,9 @@ margin: 50px;
 	text-align: justify;
 	margin: 10px;
 }
+.btn-container{
+	display: flex;
+}
 .result-font{
 	display: flex;
     font-size:3rem;
@@ -127,6 +130,6 @@ margin: 50px;
 	font-size: 2rem;
 	padding: 10px;
 	border: 0px;
-	margin-top: 25px;
-	margin-bottom: 25px;
+	margin: 25px;
+
 }
