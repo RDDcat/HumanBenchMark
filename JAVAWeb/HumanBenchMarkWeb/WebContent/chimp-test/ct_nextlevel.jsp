@@ -5,32 +5,8 @@
 <head>
 <meta charset="EUC-KR">
 <title>Chimp-Test</title>
-<style type="text/css">
-.square-container{
-	display:-webkit-flex;
-	display: grid;
-	width: 100%;
-	height: 1150px;
-	grid-template-rows: 140px 140px 140px 140px 140px 140px 140px 140pxs;
-    grid-template-columns: 140px 140px 140px 140px 140px;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-.square{
-	display:-webkit-flex;
-	display: flex;
-	width: 120px;
-	height: 120px;
-	background-color: lightgreen;
-	border-radius: 5%;
-	border-width: 10px;
-	border: 1px solid #555;
-    align-items: center;
-    justify-content: center;
-    border:5px;
-}
+<link rel="stylesheet" href="style.css">
 
-</style>
 </head>
 <body onload="start();">
 <%
@@ -51,62 +27,63 @@ System.out.println(lifes);
   <input type="hidden" name="score" value=""> 
 </form>
 
-<div>Level:</div>
-<div id='level'></div>
-<div>Lifes:</div>
-<div id='lifes'></div>
-
-<div class="square-container">
-<div class="square-row">
-<div id="box1"class="square"onclick="IsCorrect(1)"></div><br>
-<div id="box2"class="square"onclick="IsCorrect(2)"></div><br>
-<div id="box3"class="square"onclick="IsCorrect(3)"></div><br>
-<div id="box4"class="square"onclick="IsCorrect(4)"></div><br>
-<div id="box5"class="square"onclick="IsCorrect(5)"></div><br>
-<div id="box6"class="square"onclick="IsCorrect(6)"></div><br>
-<div id="box7"class="square"onclick="IsCorrect(7)"></div><br>
-<div id="box8"class="square"onclick="IsCorrect(8)"></div><br>
-</div>
-<div class="square-row">
-<div id="box9"class="square"onclick="IsCorrect(9)"></div><br>
-<div id="box10"class="square"onclick="IsCorrect(10)"></div><br>
-<div id="box11"class="square"onclick="IsCorrect(11)"></div><br>
-<div id="box12"class="square"onclick="IsCorrect(12)"></div><br>
-<div id="box13"class="square"onclick="IsCorrect(13)"></div><br>
-<div id="box14"class="square"onclick="IsCorrect(14)"></div><br>
-<div id="box15"class="square"onclick="IsCorrect(15)"></div><br>
-<div id="box16"class="square"onclick="IsCorrect(16)"></div><br>
-</div>
-<div class="square-row">
-<div id="box17"class="square"onclick="IsCorrect(17)"></div><br>
-<div id="box18"class="square"onclick="IsCorrect(18)"></div><br>
-<div id="box19"class="square"onclick="IsCorrect(19)"></div><br>
-<div id="box20"class="square"onclick="IsCorrect(20)"></div><br>
-<div id="box21"class="square"onclick="IsCorrect(21)"></div><br>
-<div id="box22"class="square"onclick="IsCorrect(22)"></div><br>
-<div id="box23"class="square"onclick="IsCorrect(23)"></div><br>
-<div id="box24"class="square"onclick="IsCorrect(24)"></div><br>
-</div>
-<div class="square-row">
-<div id="box25"class="square"onclick="IsCorrect(25)"></div><br>
-<div id="box26"class="square"onclick="IsCorrect(26)"></div><br>
-<div id="box27"class="square"onclick="IsCorrect(27)"></div><br>
-<div id="box28"class="square"onclick="IsCorrect(28)"></div><br>
-<div id="box29"class="square"onclick="IsCorrect(29)"></div><br>
-<div id="box30"class="square"onclick="IsCorrect(30)"></div><br>
-<div id="box31"class="square"onclick="IsCorrect(31)"></div><br>
-<div id="box32"class="square"onclick="IsCorrect(32)"></div><br>
-</div>
-<div class="square-row">
-<div id="box33"class="square"onclick="IsCorrect(33)"></div><br>
-<div id="box34"class="square"onclick="IsCorrect(34)"></div><br>
-<div id="box35"class="square"onclick="IsCorrect(35)"></div><br>
-<div id="box36"class="square"onclick="IsCorrect(36)"></div><br>
-<div id="box37"class="square"onclick="IsCorrect(37)"></div><br>
-<div id="box38"class="square"onclick="IsCorrect(38)"></div><br>
-<div id="box39"class="square"onclick="IsCorrect(39)"></div><br>
-<div id="box40"class="square"onclick="IsCorrect(40)"></div><br>
-</div>
+<div class="container">
+	<div class = "header">
+		<div class="level-font">Level:</div><br><div class="level-font" id='level'></div>
+		<div class="life-font">Lifes:</div><br><div class="life-font" id='lifes'></div>
+	</div>
+	<div class="square-container">
+		<div class="square-row">
+			<div id="box1"class="square"onclick="IsCorrect(1)"></div><br>
+			<div id="box2"class="square"onclick="IsCorrect(2)"></div><br>
+			<div id="box3"class="square"onclick="IsCorrect(3)"></div><br>
+			<div id="box4"class="square"onclick="IsCorrect(4)"></div><br>
+			<div id="box5"class="square"onclick="IsCorrect(5)"></div><br>
+			<div id="box6"class="square"onclick="IsCorrect(6)"></div><br>
+			<div id="box7"class="square"onclick="IsCorrect(7)"></div><br>
+			<div id="box8"class="square"onclick="IsCorrect(8)"></div><br>
+		</div>
+		<div class="square-row">
+			<div id="box9"class="square"onclick="IsCorrect(9)"></div><br>
+			<div id="box10"class="square"onclick="IsCorrect(10)"></div><br>
+			<div id="box11"class="square"onclick="IsCorrect(11)"></div><br>
+			<div id="box12"class="square"onclick="IsCorrect(12)"></div><br>
+			<div id="box13"class="square"onclick="IsCorrect(13)"></div><br>
+			<div id="box14"class="square"onclick="IsCorrect(14)"></div><br>
+			<div id="box15"class="square"onclick="IsCorrect(15)"></div><br>
+			<div id="box16"class="square"onclick="IsCorrect(16)"></div><br>
+		</div>
+		<div class="square-row">
+			<div id="box17"class="square"onclick="IsCorrect(17)"></div><br>
+			<div id="box18"class="square"onclick="IsCorrect(18)"></div><br>
+			<div id="box19"class="square"onclick="IsCorrect(19)"></div><br>
+			<div id="box20"class="square"onclick="IsCorrect(20)"></div><br>
+			<div id="box21"class="square"onclick="IsCorrect(21)"></div><br>
+			<div id="box22"class="square"onclick="IsCorrect(22)"></div><br>
+			<div id="box23"class="square"onclick="IsCorrect(23)"></div><br>
+			<div id="box24"class="square"onclick="IsCorrect(24)"></div><br>
+		</div>
+		<div class="square-row">
+			<div id="box25"class="square"onclick="IsCorrect(25)"></div><br>
+			<div id="box26"class="square"onclick="IsCorrect(26)"></div><br>
+			<div id="box27"class="square"onclick="IsCorrect(27)"></div><br>
+			<div id="box28"class="square"onclick="IsCorrect(28)"></div><br>
+			<div id="box29"class="square"onclick="IsCorrect(29)"></div><br>
+			<div id="box30"class="square"onclick="IsCorrect(30)"></div><br>
+			<div id="box31"class="square"onclick="IsCorrect(31)"></div><br>
+			<div id="box32"class="square"onclick="IsCorrect(32)"></div><br>
+			</div>
+		<div class="square-row">
+			<div id="box33"class="square"onclick="IsCorrect(33)"></div><br>
+			<div id="box34"class="square"onclick="IsCorrect(34)"></div><br>
+			<div id="box35"class="square"onclick="IsCorrect(35)"></div><br>
+			<div id="box36"class="square"onclick="IsCorrect(36)"></div><br>
+			<div id="box37"class="square"onclick="IsCorrect(37)"></div><br>
+			<div id="box38"class="square"onclick="IsCorrect(38)"></div><br>
+			<div id="box39"class="square"onclick="IsCorrect(39)"></div><br>
+			<div id="box40"class="square"onclick="IsCorrect(40)"></div><br>
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript">
