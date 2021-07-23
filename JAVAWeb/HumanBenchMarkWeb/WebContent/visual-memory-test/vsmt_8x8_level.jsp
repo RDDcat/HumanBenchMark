@@ -4,28 +4,8 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
-<style type="text/css">
-.squares{
-	display: grid;
-	grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px;
-    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-.square{
-	display: flex;
-	width: 50px;
-	height: 50px;
-	background-color: orange;
-	border-radius: 5%;
-	border-width: 10px;
-	border: 1px solid #555;
-    align-items: center;
-    justify-content: center;
-}
-
-</style>
+<title>visual memory test</title>
+<link rel="stylesheet" href="vsmt-style.css">
 </head>
 <body onload="Play()">
 <%
@@ -38,93 +18,80 @@ String  life = request.getParameter("life");
   <input type="hidden" id="level" name="level" value="">
 </form>
 
-<div>Level:</div>
-<div id='showLevel'>21</div>
-<div>LIFE</div>
-<div id="showLife"><%=life%></div>
-<div class="squares">
-<div class="square-row">
-<div id="box1"class="square"onclick="IsCorrect(1)"></div>
-<div id="box2"class="square"onclick="IsCorrect(2)"></div>
-<div id="box3"class="square"onclick="IsCorrect(3)"></div>
-<div id="box4"class="square"onclick="IsCorrect(4)"></div>
-<div id="box5"class="square"onclick="IsCorrect(5)"></div>
-<div id="box6"class="square"onclick="IsCorrect(6)"></div>
-<div id="box7"class="square"onclick="IsCorrect(7)"></div>
-<div id="box8"class="square"onclick="IsCorrect(8)"></div>
+<div class="container">
+	<div class="header">
+		<div class="level-font">Level :</div>
+		<div class="level-font" id='showLevel'>21</div>
+		<div class="life-font">LIFE :</div>
+		<div class="life-font" id='showLife'><%=life%></div>	
+	</div>
+	<div class="square8-container">
+		<div id="box1"class="square8"onclick="IsCorrect(1)"></div>
+		<div id="box2"class="square8"onclick="IsCorrect(2)"></div>
+		<div id="box3"class="square8"onclick="IsCorrect(3)"></div>
+		<div id="box4"class="square8"onclick="IsCorrect(4)"></div>
+		<div id="box5"class="square8"onclick="IsCorrect(5)"></div>
+		<div id="box6"class="square8"onclick="IsCorrect(6)"></div>
+		<div id="box7"class="square8"onclick="IsCorrect(7)"></div>
+		<div id="box8"class="square8"onclick="IsCorrect(8)"></div>
+		<div id="box9"class="square8"onclick="IsCorrect(9)"></div>
+		<div id="box10"class="square8"onclick="IsCorrect(10)"></div>
+		<div id="box11"class="square8"onclick="IsCorrect(11)"></div>
+		<div id="box12"class="square8"onclick="IsCorrect(12)"></div>
+		<div id="box13"class="square8"onclick="IsCorrect(13)"></div>
+		<div id="box14"class="square8"onclick="IsCorrect(14)"></div>
+		<div id="box15"class="square8"onclick="IsCorrect(15)"></div>
+		<div id="box16"class="square8"onclick="IsCorrect(16)"></div>
+		<div id="box17"class="square8"onclick="IsCorrect(17)"></div>
+		<div id="box18"class="square8"onclick="IsCorrect(18)"></div>
+		<div id="box19"class="square8"onclick="IsCorrect(19)"></div>
+		<div id="box20"class="square8"onclick="IsCorrect(20)"></div>
+		<div id="box21"class="square8"onclick="IsCorrect(21)"></div>
+		<div id="box22"class="square8"onclick="IsCorrect(22)"></div>
+		<div id="box23"class="square8"onclick="IsCorrect(23)"></div>
+		<div id="box24"class="square8"onclick="IsCorrect(24)"></div>
+		<div id="box25"class="square8"onclick="IsCorrect(25)"></div>
+		<div id="box26"class="square8"onclick="IsCorrect(26)"></div>
+		<div id="box27"class="square8"onclick="IsCorrect(27)"></div>
+		<div id="box28"class="square8"onclick="IsCorrect(28)"></div>
+		<div id="box29"class="square8"onclick="IsCorrect(29)"></div>
+		<div id="box30"class="square8"onclick="IsCorrect(30)"></div>
+		<div id="box31"class="square8"onclick="IsCorrect(31)"></div>
+		<div id="box32"class="square8"onclick="IsCorrect(32)"></div>
+		<div id="box33"class="square8"onclick="IsCorrect(33)"></div>
+		<div id="box34"class="square8"onclick="IsCorrect(34)"></div>
+		<div id="box35"class="square8"onclick="IsCorrect(35)"></div>
+		<div id="box36"class="square8"onclick="IsCorrect(36)"></div>
+		<div id="box37"class="square8"onclick="IsCorrect(37)"></div>
+		<div id="box38"class="square8"onclick="IsCorrect(38)"></div>
+		<div id="box39"class="square8"onclick="IsCorrect(39)"></div>
+		<div id="box40"class="square8"onclick="IsCorrect(40)"></div>
+		<div id="box41"class="square8"onclick="IsCorrect(41)"></div>
+		<div id="box42"class="square8"onclick="IsCorrect(42)"></div>
+		<div id="box43"class="square8"onclick="IsCorrect(43)"></div>
+		<div id="box44"class="square8"onclick="IsCorrect(44)"></div>
+		<div id="box45"class="square8"onclick="IsCorrect(45)"></div>
+		<div id="box46"class="square8"onclick="IsCorrect(46)"></div>
+		<div id="box47"class="square8"onclick="IsCorrect(47)"></div>
+		<div id="box48"class="square8"onclick="IsCorrect(48)"></div>
+		<div id="box49"class="square8"onclick="IsCorrect(49)"></div>
+		<div id="box50"class="square8"onclick="IsCorrect(50)"></div>
+		<div id="box51"class="square8"onclick="IsCorrect(51)"></div>
+		<div id="box52"class="square8"onclick="IsCorrect(52)"></div>
+		<div id="box53"class="square8"onclick="IsCorrect(53)"></div>
+		<div id="box54"class="square8"onclick="IsCorrect(54)"></div>
+		<div id="box55"class="square8"onclick="IsCorrect(55)"></div>
+		<div id="box56"class="square8"onclick="IsCorrect(56)"></div>
+		<div id="box57"class="square8"onclick="IsCorrect(57)"></div>
+		<div id="box58"class="square8"onclick="IsCorrect(58)"></div>
+		<div id="box59"class="square8"onclick="IsCorrect(59)"></div>
+		<div id="box60"class="square8"onclick="IsCorrect(60)"></div>
+		<div id="box61"class="square8"onclick="IsCorrect(61)"></div>
+		<div id="box62"class="square8"onclick="IsCorrect(62)"></div>
+		<div id="box63"class="square8"onclick="IsCorrect(63)"></div>
+		<div id="box64"class="square8"onclick="IsCorrect(64)"></div>
+	</div>
 </div>
-<div class="square-row">
-<div id="box9"class="square"onclick="IsCorrect(9)"></div>
-<div id="box10"class="square"onclick="IsCorrect(10)"></div>
-<div id="box11"class="square"onclick="IsCorrect(11)"></div>
-<div id="box12"class="square"onclick="IsCorrect(12)"></div>
-<div id="box13"class="square"onclick="IsCorrect(13)"></div>
-<div id="box14"class="square"onclick="IsCorrect(14)"></div>
-<div id="box15"class="square"onclick="IsCorrect(15)"></div>
-<div id="box16"class="square"onclick="IsCorrect(16)"></div>
-</div>
-<div class="square-row">
-<div id="box17"class="square"onclick="IsCorrect(17)"></div>
-<div id="box18"class="square"onclick="IsCorrect(18)"></div>
-<div id="box19"class="square"onclick="IsCorrect(19)"></div>
-<div id="box20"class="square"onclick="IsCorrect(20)"></div>
-<div id="box21"class="square"onclick="IsCorrect(21)"></div>
-<div id="box22"class="square"onclick="IsCorrect(22)"></div>
-<div id="box23"class="square"onclick="IsCorrect(23)"></div>
-<div id="box24"class="square"onclick="IsCorrect(24)"></div>
-</div>
-<div class="square-row">
-<div id="box25"class="square"onclick="IsCorrect(25)"></div>
-<div id="box26"class="square"onclick="IsCorrect(26)"></div>
-<div id="box27"class="square"onclick="IsCorrect(27)"></div>
-<div id="box28"class="square"onclick="IsCorrect(28)"></div>
-<div id="box29"class="square"onclick="IsCorrect(29)"></div>
-<div id="box30"class="square"onclick="IsCorrect(30)"></div>
-<div id="box31"class="square"onclick="IsCorrect(31)"></div>
-<div id="box32"class="square"onclick="IsCorrect(32)"></div>
-</div>
-<div class="square-row">
-<div id="box33"class="square"onclick="IsCorrect(33)"></div>
-<div id="box34"class="square"onclick="IsCorrect(34)"></div>
-<div id="box35"class="square"onclick="IsCorrect(35)"></div>
-<div id="box36"class="square"onclick="IsCorrect(36)"></div>
-<div id="box37"class="square"onclick="IsCorrect(37)"></div>
-<div id="box38"class="square"onclick="IsCorrect(38)"></div>
-<div id="box39"class="square"onclick="IsCorrect(39)"></div>
-<div id="box40"class="square"onclick="IsCorrect(40)"></div>
-</div>
-<div class="square-row">
-<div id="box41"class="square"onclick="IsCorrect(41)"></div>
-<div id="box42"class="square"onclick="IsCorrect(42)"></div>
-<div id="box43"class="square"onclick="IsCorrect(43)"></div>
-<div id="box44"class="square"onclick="IsCorrect(44)"></div>
-<div id="box45"class="square"onclick="IsCorrect(45)"></div>
-<div id="box46"class="square"onclick="IsCorrect(46)"></div>
-<div id="box47"class="square"onclick="IsCorrect(47)"></div>
-<div id="box48"class="square"onclick="IsCorrect(48)"></div>
-</div>
-<div class="square-row">
-<div id="box49"class="square"onclick="IsCorrect(49)"></div>
-<div id="box50"class="square"onclick="IsCorrect(50)"></div>
-<div id="box51"class="square"onclick="IsCorrect(51)"></div>
-<div id="box52"class="square"onclick="IsCorrect(52)"></div>
-<div id="box53"class="square"onclick="IsCorrect(53)"></div>
-<div id="box54"class="square"onclick="IsCorrect(54)"></div>
-<div id="box55"class="square"onclick="IsCorrect(55)"></div>
-<div id="box56"class="square"onclick="IsCorrect(56)"></div>
-</div>
-<div class="square-row">
-<div id="box57"class="square"onclick="IsCorrect(57)"></div>
-<div id="box58"class="square"onclick="IsCorrect(58)"></div>
-<div id="box59"class="square"onclick="IsCorrect(59)"></div>
-<div id="box60"class="square"onclick="IsCorrect(60)"></div>
-<div id="box61"class="square"onclick="IsCorrect(61)"></div>
-<div id="box62"class="square"onclick="IsCorrect(62)"></div>
-<div id="box63"class="square"onclick="IsCorrect(63)"></div>
-<div id="box64"class="square"onclick="IsCorrect(64)"></div>
-</div>
-</div>
-
 <script>
 var count = 0;
 var time = 1500;
@@ -189,14 +156,14 @@ function IsCorrect(number){
 function ClearPage(){
 	for(count=1;count<65;count++){
 		var box = document.getElementById("box"+count);
-		box.style.backgroundColor = "orange";
+		box.style.backgroundColor = "#b5c7ed";
 	}
 }
 
 // 받은 숫자에 해당하는 박스 색 파란색으로 칠하기
 function ShowBlue(number){
 	var box = document.getElementById("box"+number);
-	box.style.backgroundColor = "blue";
+	box.style.backgroundColor = "#f77777";
 }
 
 function ShowBlack(number){

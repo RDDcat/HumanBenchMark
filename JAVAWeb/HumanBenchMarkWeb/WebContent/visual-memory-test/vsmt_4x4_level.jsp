@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>visual memory test</title>
+<link rel="stylesheet" href="vsmt-style.css">
 <style type="text/css">
 .squares{
 	display: grid;
@@ -38,37 +39,32 @@ String  life = request.getParameter("life");
   <input type="hidden" id="level" name="level" value="">
 </form>
 
-<div>Level:</div>
-<div id='showLevel'>3</div>
-<div>LIFE</div>
-<div id="showLife"><%=life%></div>
-<div class="squares">
-<div class="square-row">
-<div id="box1"class="square"onclick="IsCorrect(1)"></div>
-<div id="box2"class="square"onclick="IsCorrect(2)"></div>
-<div id="box3"class="square"onclick="IsCorrect(3)"></div>
-<div id="box4"class="square"onclick="IsCorrect(4)"></div>
+<div class="container">
+	<div class="header">
+		<div class="level-font">Level :</div>
+		<div class="level-font" id='showLevel'>3</div>
+		<div class="life-font">LIFE :</div>
+		<div class="life-font" id='showLife'><%=life%></div>	
+	</div>
+	<div class="square4-container">
+		<div id="box1"class="square4"onclick="IsCorrect(1)"></div>
+		<div id="box2"class="square4"onclick="IsCorrect(2)"></div>
+		<div id="box3"class="square4"onclick="IsCorrect(3)"></div>
+		<div id="box4" class="square4"onclick="IsCorrect(4)"></div>
+		<div id="box5" class="square4"onclick="IsCorrect(5)"></div>
+		<div id="box6" class="square4"onclick="IsCorrect(6)"></div>
+		<div id="box7" class="square4"onclick="IsCorrect(7)"></div>
+		<div id="box8" class="square4"onclick="IsCorrect(8)"></div>
+		<div id="box9" class="square4"onclick="IsCorrect(9)"></div>
+		<div id="box10" class="square4"onclick="IsCorrect(10)"></div>
+		<div id="box11" class="square4"onclick="IsCorrect(11)"></div>
+		<div id="box12" class="square4"onclick="IsCorrect(12)"></div>
+		<div id="box13" class="square4"onclick="IsCorrect(13)"></div>
+		<div id="box14" class="square4"onclick="IsCorrect(14)"></div>
+		<div id="box15" class="square4"onclick="IsCorrect(15)"></div>
+		<div id="box16" class="square4"onclick="IsCorrect(16)"></div>
+	</div>
 </div>
-<div class="square-row">
-<div id="box5" class="square"onclick="IsCorrect(5)"></div>
-<div id="box6" class="square"onclick="IsCorrect(6)"></div>
-<div id="box7" class="square"onclick="IsCorrect(7)"></div>
-<div id="box8" class="square"onclick="IsCorrect(8)"></div>
-</div>
-<div class="square-row">
-<div id="box9" class="square"onclick="IsCorrect(9)"></div>
-<div id="box10" class="square"onclick="IsCorrect(10)"></div>
-<div id="box11" class="square"onclick="IsCorrect(11)"></div>
-<div id="box12" class="square"onclick="IsCorrect(12)"></div>
-</div>
-<div class="square-row">
-<div id="box13" class="square"onclick="IsCorrect(13)"></div>
-<div id="box14" class="square"onclick="IsCorrect(14)"></div>
-<div id="box15" class="square"onclick="IsCorrect(15)"></div>
-<div id="box16" class="square"onclick="IsCorrect(16)"></div>
-</div>
-</div>
-
 <script>
 var count = 0;
 var time = 1500;
@@ -133,14 +129,14 @@ function IsCorrect(number){
 function ClearPage(){
 	for(count=1;count<17;count++){
 		var box = document.getElementById("box"+count);
-		box.style.backgroundColor = "orange";
+		box.style.backgroundColor = "#b5c7ed";
 	}
 }
 
 // 받은 숫자에 해당하는 박스 색 파란색으로 칠하기
 function ShowBlue(number){
 	var box = document.getElementById("box"+number);
-	box.style.backgroundColor = "blue";
+	box.style.backgroundColor = "#f77777";
 }
 
 function ShowBlack(number){

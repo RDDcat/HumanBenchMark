@@ -4,28 +4,8 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
-<style type="text/css">
-.squares{
-	display: grid;
-	grid-template-rows: 150px 150px 150px;
-    grid-template-columns: 150px 150px 150px;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-.square{
-	display: flex;
-	width: 150px;
-	height: 150px;
-	background-color: orange;
-	border-radius: 5%;
-	border-width: 10px;
-	border: 1px solid #555;
-    align-items: center;
-    justify-content: center;
-}
-
-</style>
+<title>visual memory test</title>
+<link rel="stylesheet" href="vsmt-style.css">
 </head>
 <body onload="Play()">
 <form name="form1" action="vsmt_4x4_level.jsp" method="post">
@@ -35,27 +15,27 @@
   <input type="hidden" id="level" name="level" value="">
 </form>
 
-<div>Level:</div>
-<div id='showLevel'>1</div>
-<div>LIFE</div>
-<div id='showLife'>3</div>
-<div class="squares">
-<div class="square-row">
-<div id="box1"class="square"onclick="IsCorrect(1)"></div>
-<div id="box2"class="square"onclick="IsCorrect(2)"></div>
-<div id="box3"class="square"onclick="IsCorrect(3)"></div>
+
+<div class="container">
+	<div class="header">
+		<div class="level-font">Level :</div>
+		<div class="level-font" id='showLevel'>1</div>
+		<div class="life-font">LIFE :</div>
+		<div class="life-font" id='showLife'>3</div>	
+	</div>
+	<div class="square3-container">
+		<div id="box1"class="square3"onclick="IsCorrect(1)"></div>
+		<div id="box2"class="square3"onclick="IsCorrect(2)"></div>
+		<div id="box3"class="square3"onclick="IsCorrect(3)"></div>
+		<div id="box4" class="square3"onclick="IsCorrect(4)"></div>
+		<div id="box5" class="square3"onclick="IsCorrect(5)"></div>
+		<div id="box6" class="square3"onclick="IsCorrect(6)"></div>
+		<div id="box7" class="square3"onclick="IsCorrect(7)"></div>
+		<div id="box8" class="square3"onclick="IsCorrect(8)"></div>
+		<div id="box9" class="square3"onclick="IsCorrect(9)"></div>
+	</div>
 </div>
-<div class="square-row">
-<div id="box4" class="square"onclick="IsCorrect(4)"></div>
-<div id="box5" class="square"onclick="IsCorrect(5)"></div>
-<div id="box6" class="square"onclick="IsCorrect(6)"></div>
-</div>
-<div class="square-row">
-<div id="box7" class="square"onclick="IsCorrect(7)"></div>
-<div id="box8" class="square"onclick="IsCorrect(8)"></div>
-<div id="box9" class="square"onclick="IsCorrect(9)"></div>
-</div>
-</div>
+
 
 
 <script>
@@ -122,14 +102,14 @@ function IsCorrect(number){
 function ClearPage(){
 	for(count=1;count<10;count++){
 		var box = document.getElementById("box"+count);
-		box.style.backgroundColor = "orange";
+		box.style.backgroundColor = "#b5c7ed";
 	}
 }
 
-// 받은 숫자에 해당하는 박스 색 파란색으로 칠하기
+// 받은 숫자에 해당하는 박스 색 붉은색으로 칠하기
 function ShowBlue(number){
 	var box = document.getElementById("box"+number);
-	box.style.backgroundColor = "blue";
+	box.style.backgroundColor = "#f77777";
 }
 
 function ShowBlack(number){
